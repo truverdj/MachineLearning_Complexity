@@ -11,3 +11,4 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 #### (1) Hoefding's Inequality 
 
+Let $X$ be a random variable.
