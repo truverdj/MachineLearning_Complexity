@@ -11,4 +11,37 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 #### (1) Hoefding's Inequality 
 
-Let $X$ be a random variable.
+Let $X$ be a random variable in $[a,b]$ and $t \geq 0$. Then prepare for the string of inequalities.
+
+$$
+\begin{aligned}
+Pr(X - \mu_X \geq t) 
+&\leq \min_{\lambda \geq 0} M_{X - \mu_X}(\lambda)e^{-\lambda t} \quad (\text{Chernoff Bounds}) \\
+&= \min_{\lambda\geq 0} E\left[ e^{\lambda(X-\mu_X)} \right]e^{-\lambda t} \quad (\text{MGF Denfinition}) \\
+&\leq \min_{\lambda\geq 0} \exp\left( \frac{\lambda^2(b-a)^2}{8} \right) \exp(-\lambda t) \quad \text{(Hoefding Lemma)} \\
+&= \min_{\lambda\ge0}\exp\left( \frac{\lambda^2(b-a)^2}{8} - \lambda t \right)
+\end{aligned}
+$$
+
+We would now like to find the value of lambda that minimizes this function. We employ good old calculus.
+
+$$
+\begin{aligned}
+0 
+&= \frac{d}{d\lambda} \exp\left( \frac{\lambda^2(b-a)^2}{8} - \lambda t \right)\\
+&= \exp\left( \frac{\lambda^2(b-a)^2}{8} - \lambda t \right)\left( \frac{2\lambda(b-a)^2}{8} - t \right) \\
+\implies \\
+0 &= \left( \frac{2\lambda(b-a)^2}{8} - t \right) \\
+\lambda^* &= \frac{4t}{(b-a)^2}
+\end{aligned}
+$$
+
+We shove this value of $\lambda$ back into our expression and obtain:
+
+$$
+\begin{aligned}
+Pr(X - \mu_X \geq t) 
+&\leq \exp\left[ \left( \frac{4t}{(b-a)^2} \right)^2 \frac{(b-a)^2}{8} - \left(\frac{4t}{(b-a)^2}\right)t \right] \\
+&= \exp\left( \frac{-2t^2}{(b-a)^2} \right)
+\end{aligned}
+$$
