@@ -1,0 +1,13 @@
+---
+title: "STA 561 HW5"
+author: "Daniel Truver"
+date: "3/21/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+#### (1) Hoefding's Inequality 
+
