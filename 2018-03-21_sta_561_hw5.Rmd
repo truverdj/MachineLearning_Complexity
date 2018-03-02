@@ -100,3 +100,10 @@ $$
 terms, meaning $k_2$ is the inner product between vectors in $d - 1$ dimensions plus an intercept term, here $1$. So, we have a halfspace in $d-1$ dimensions. Therefore, the VC-dimension of $\mathcal{H}_2$ is $d$.
 
 ##### (b) Approximation and Estimation Error
+
+
+#### (3) Ridge Regression
+
+```{r avoidMatLab}
+X = R.matlab::readMat("X.mat")$X
+```
