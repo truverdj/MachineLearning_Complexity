@@ -83,6 +83,20 @@ which has a sharper bound.
 
 ##### (a) Find VC Dimensions
 
+$\mathcal{H}_1$ is a space of linear functions in $p$ dimensions, so the VC-dimension is $p+1$.
 
+$\mathcal{H}_2$ is a space of quadratic functions. However, we can expand the kernel $k_2$ is the following way.
+$$
+(x_i^Tx + 1)^2 = (1 + x_{i1}x_1 + x_{i2}x_2 + \cdots + x_{ip}x_p)^2
+$$
+Were we to expand this using the multinomial theorem, we would end up with 
+$$
+1^2 + x_{i1}^2x_1^2 + \cdots + x_{ip}^2x_p^2 + 2x_{i1}x_{i2}x_1x_2 + \dots 
+$$
+The point is, we'll have
+$$
+\frac{(2+p)!}{2!p!} = \frac{(p+2)(p+1)}{2} = d
+$$
+terms, meaning $k_2$ is the inner product between vectors in $d - 1$ dimensions plus an intercept term, here $1$. So, we have a halfspace in $d-1$ dimensions. Therefore, the VC-dimension of $\mathcal{H}_2$ is $d$.
 
-
+##### (b) Approximation and Estimation Error
