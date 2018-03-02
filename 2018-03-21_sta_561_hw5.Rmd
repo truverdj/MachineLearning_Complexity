@@ -71,3 +71,18 @@ Pr\left(\frac{1}{n}\sum_{i=1}^n (X_i - \mu_{X_i}) \geq t \right) &\leq \exp\left
 $$
 which we know is Hoefding's Inequality. 
 
+##### (b) Sharper Bound
+
+Let $X_1, \dots, X_n$ be iid standard normal random variables. Then we have 
+$$
+\frac{1}{n}\sum_{i=1}^n X_i \sim N(0,1/n),
+$$
+which has a sharper bound. 
+
+#### (2) VC Dimension
+
+##### (a) Find VC Dimensions
+
+
+
+
